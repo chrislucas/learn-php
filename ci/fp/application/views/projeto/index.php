@@ -1,1 +1,1 @@
-<?php echo $valor; ?>
+<?php print_r($projetos); ?>

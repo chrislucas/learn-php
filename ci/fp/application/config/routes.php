@@ -51,6 +51,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] 		= 'welcome';
 $route['pro/index'] 				= 'projeto';
+$route['pro/fx'] 					= 'projeto/fx';
 $route['welcome/index'] 			= 'welcome';
+$route['test/callback/(:num)'] = function($data = 99) {
+	return 'projeto/fx/'.$data;
+};
+
 $route['404_override'] 			= '';
 $route['translate_uri_dashes'] 	= FALSE;

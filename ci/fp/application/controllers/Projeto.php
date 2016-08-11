@@ -3,17 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Projeto extends CI_Controller {
 
-
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('projetos_m', 'projeto');
 	}
 
 	public function index()
-	{
-		$this->load->model('projetos_m', 'projeto');
-		$valor['valor'] =  $this->projeto->buscar_projetos();
-		$this->load->view('projeto', $valor, FALSE);
+	{	
+		$valor['projetos'] =  $this->projeto->buscar_projetos(1);
+		$this->load->view('projeto/index', $valor, FALSE);
+	}
+
+	public function fx($data) {
+		return $this->projeto->buscar_projetos() & $data;
 	}
 
 }
