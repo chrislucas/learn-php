@@ -12,8 +12,8 @@ class Projeto extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('projetos_m', 'projeto');
-		$data['valor'] =  $this->projeto->buscar_projetos();
-		$this->load->view('projeto/index', $data, FALSE);
+		$valor['valor'] =  $this->projeto->buscar_projetos();
+		$this->load->view('projeto', $valor, FALSE);
 	}
 
 }
